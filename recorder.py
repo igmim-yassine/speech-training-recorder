@@ -56,10 +56,11 @@ class Recorder(QObject):
         self.window.setProperty('scriptFilename', filename)
         self.audio.write_wav(filename, data)
         scriptText = self.window.property('scriptText')
-        filename_1 = os.path.normpath(os.path.join('/content/drive/MyDrive/dataset_transcripted/audios', "recorder_" + TIME + ".wav"))
+        # Here Your put the path to be saved in the generated csv.
+        filename_1 = os.path.normpath(os.path.join('[YOUR PATH]', "recorder_" + TIME + ".wav"))
         with open(os.path.join(self.window.property('saveDir'), "recorder.csv"), "a", encoding='UTF-8') as xsvfile:
             writer = csv.writer(xsvfile)
-            data = ['/content/drive/MyDrive/dataset_transcripted/audios/' + "recorder_" + TIME + ".wav", self.sanitize_script(scriptText)]
+            data = ['[YOUR PATH]' + "recorder_" + TIME + ".wav", self.sanitize_script(scriptText)]
             # write the data
             writer.writerow(data)
         logging.debug("wrote %s to %s", len(data), filename)
