@@ -1,6 +1,6 @@
 # speech-training-recorder
 
-> Simple GUI application to help record audio dictated from given text
+> A simple GUI application to help record audio dictated from given text
 prompts, for use with training speech recognition or speech synthesis.
 
 Given a text file containing prompts, this app will choose a random selection
@@ -29,7 +29,7 @@ python3 recorder.py -p prompts/timit.txt
 
 ```
 usage: recorder.py [-h] [-p PROMPTS_FILENAME] [-d SAVE_DIR] [-c PROMPTS_COUNT]
-                   [-l PROMPT_LEN_SOFT_MAX] [-o]
+                   [-l PROMPT_LEN_SOFT_MAX]
 
 Given a text file containing prompts, this app will choose a random selection
 and ordering of them, display them to be dictated by the user, and record the
@@ -46,14 +46,8 @@ optional arguments:
   -c PROMPTS_COUNT, --prompts_count PROMPTS_COUNT
                         number of prompts to select and display (default: 100)
   -l PROMPT_LEN_SOFT_MAX, --prompt_len_soft_max PROMPT_LEN_SOFT_MAX
-  -o, --ordered         present prompts in order, as opposed to random
-                        (default: False)
 ```
 
 ## Customization
 
 See `prompts/` directory for acceptable formats for prompt files: the simplest is `rainbow_passage.txt`.
-
-## Related Repositories
-
-* [daanzu/kaldi_ag_training](https://github.com/daanzu/kaldi_ag_training): Docker image and scripts for training finetuned or completely personal Kaldi speech models. Particularly for use with [kaldi-active-grammar](https://github.com/daanzu/kaldi-active-grammar).

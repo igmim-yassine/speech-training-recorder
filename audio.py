@@ -13,9 +13,9 @@ class Audio(object):
     """Streams raw audio from microphone. Data is received in a separate thread, and stored in a buffer, to be read from."""
 
     FORMAT = pyaudio.paInt16
-    RATE = 16000
-    CHANNELS = 1
-    BLOCKS_PER_SECOND = 50
+    RATE = 48000
+    CHANNELS = 2
+    BLOCKS_PER_SECOND = 46.875
 
     def __init__(self, callback=None, buffer_s=0, flush_queue=True):
         def proxy_callback(in_data, frame_count, time_info, status):
